@@ -49,6 +49,18 @@ public class ImageIconButtonPaintIconLabel extends JFrame implements ActionListe
 
    public void actionPerformed(ActionEvent e)
 	{
+      if (e.getSource() instanceof JButton)
+      {
+         if (e.getSource() == bbear)
+         {
+            lblImg.setIcon(image1);
+         }
+         else
+         {
+            lblImg.setIcon(image3);
+         }
+      }
+      
 	    
 		      // displays ImageIcon image
 	                            // using JLabel as a surface

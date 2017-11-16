@@ -33,6 +33,7 @@ public class ImageIconRollOver extends JFrame implements MouseListener
       
 			      
 		lblImg = new JLabel();
+      lblImg.addMouseListener(this);
       
       // set mouse listener to p1 - could also set to lblImg
       
@@ -49,13 +50,14 @@ public class ImageIconRollOver extends JFrame implements MouseListener
    
    public void mouseEntered(MouseEvent e)
    {
-           
+      lblImg.setIcon(image1);
+      lblImg.repaint();           
    }
    
    public void mouseExited(MouseEvent e)
    {
-            
-              
+      lblImg.setIcon(image2);      
+      lblImg.repaint();        
    }
    
    public void mousePressed(MouseEvent e)

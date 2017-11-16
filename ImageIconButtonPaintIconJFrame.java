@@ -71,8 +71,18 @@ public class ImageIconButtonPaintIconJFrame extends JFrame implements ActionList
 	public void actionPerformed(ActionEvent e)
 	{
     // decide which image to "paint"  
-	  	  
-		
+	  if (e.getSource() == bbear)
+     {
+        img = bearImg;
+        repaint();
+     }
+     else
+     {
+        img = jla1BigImg;
+        repaint();   //calls update() to clear screen
+                     //and then calls paint()
+                     //You never call paint() directly.	  
+	  }	
 	}
 	
 	public void paint(Graphics g)
@@ -80,13 +90,16 @@ public class ImageIconButtonPaintIconJFrame extends JFrame implements ActionList
 	// try running this applet without the
 	// "super.paint(g);"
 	  super.paint(g);
+     g.drawImage(img,100,100,this);
 	 
 
 //////////////////////////////////
 /* 
    in case the image covers your buttons, you need to repaint
 	them back on
-*/		
+*/	
+   bbear.repaint();
+   bjla1.repaint();	
 	
 		
 	}

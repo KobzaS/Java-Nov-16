@@ -15,7 +15,8 @@ public class Centered extends JFrame
 
       public void paint(Graphics g)
       {
-           super.paint(g);      
+           super.paint(g); 
+           int width, height;     
 			  
 		  
 			  Font f = new Font("TimesRoman", Font.PLAIN, 25);
@@ -25,7 +26,9 @@ public class Centered extends JFrame
 			  FontMetrics fm = getFontMetrics(f);
 			  			  
 			  g.setFont(f);
-			 // Calculate the mid point  
+			 // Calculate the mid point
+            int x = (getWidth() - fm.stringWidth(s))/2;
+            int y = (getHeight() - fm.getHeight())/2;
 			  
 						  
 			  g.drawString(s,x,y);
